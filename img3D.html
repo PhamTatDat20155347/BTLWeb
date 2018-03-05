@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	html, body {
+		width: 100%;
+		height: 100%;
+	}
+
+	.cube {
+		width: 100px;
+		height: 100px;
+		position: relative;
+		transform-style: preserve-3d;
+		transform: rotateX(-20deg) rotateY(-45deg);
+		top: 50%;
+		left: 10%;
+		margin-left: 0px;
+		margin-top: 50%;
+	}
+
+	.cube1 {
+		width: 100px;
+		height: 100px;
+		position: relative;
+		transform-style: preserve-3d;
+		transform: rotateX(-20deg) rotateY(-45deg);
+		left: 30%;
+	}
+
+	.cube2 {
+		width: 100px;
+		height: 100px;
+		position: relative;
+		transform-style: preserve-3d;
+		transform: rotateX(-20deg) rotateY(-45deg);
+		left: 50%;
+	}
+
+	.cube3 {
+		width: 100px;
+		height: 100px;
+		position: relative;
+		transform-style: preserve-3d;
+		transform: rotateX(-20deg) rotateY(-45deg);
+		left: 70%;
+	}
+
+	.cube div {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		background: red;
+		box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
+	}
+
+	.cube div.top {
+		transform: rotateX(90deg);
+		margin-top: -50px;
+	}
+
+	.cube div.right {
+		transform: rotateY(90deg); 
+		margin-left: 50px;
+	}
+
+	.cube div.bottom {
+		transform: rotateX(90deg);
+		margin-top: 50px;
+	}
+
+	.cube div.left {
+		transform: rotateY(-90deg);
+		margin-left: -50px;
+	}
+
+	.cube div.front {
+		transform: translateZ(50px); 
+	}
+
+	.cube div.back {
+		transform: translateZ(-50px); 
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(function(){
+		$('.cube1').parent().mousemove(function(e){
+			$('.cube1').css('transform', 'rotateX(' + - e.pageY + 'deg)' + 'rotateY(' + e.pageX + 'deg)');
+		}); 
+	})
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="cube">
+					<div class="top"></div>
+					<div class="right"></div>
+					<div class="bottom"></div>
+					<div class="left"></div>
+					<div class="back"></div>
+					<div class="front"></div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="cube cube1">
+					<div class="top"></div>
+					<div class="right"></div>
+					<div class="bottom"></div>
+					<div class="left"></div>
+					<div class="back"></div>
+					<div class="front"></div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="cube cube2">
+					<div class="top"></div>
+					<div class="right"></div>
+					<div class="bottom"></div>
+					<div class="left"></div>
+					<div class="back"></div>
+					<div class="front"></div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="cube cube3">
+					<div class="top"></div>
+					<div class="right"></div>
+					<div class="bottom"></div>
+					<div class="left"></div>
+					<div class="back"></div>
+					<div class="front"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
